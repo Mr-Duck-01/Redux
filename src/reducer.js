@@ -1,4 +1,4 @@
-const initialState = {value: 0};
+const initialState = {counter: 0};
 
 const reducer = (state = initialState, action) => {
 
@@ -6,17 +6,17 @@ const reducer = (state = initialState, action) => {
         case 'INC':
             return {
                 ...state,
-                value: state.value + 1
+                counter: state.counter + 1
             };
         case 'DEC':
             return {
                 ...state,
-                value: state.value - 1
+                counter: state.counter - 1
             };
         case 'RND':
             return {
                 ...state,
-                value: state.value * action.payload
+                counter: state.counter * action.payload
             };
         default:
             return state;
@@ -25,18 +25,3 @@ const reducer = (state = initialState, action) => {
 }
 
 export default reducer;
-
-// const reducer = (state = 0, action) => {
-
-//     switch (action.type) {
-//         case 'INC':
-//             return state + 1;
-//         case 'DEC':
-//             return state -1;
-//         case 'RND':
-//             return state * action.payload;
-//         default:
-//             return state;
-//     }
-
-// }
